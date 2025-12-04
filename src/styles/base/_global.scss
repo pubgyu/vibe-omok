@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as vars;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-primary: #{vars.$font-primary};
+  --bg: #0b1220;
+  --bg-alt: #0d1424;
+  --bg-gradient: radial-gradient(circle at 20% 20%, #0f1c35 0, rgba(15, 28, 53, 0) 36%),
+    radial-gradient(circle at 80% 10%, #12244b 0, rgba(18, 36, 75, 0) 30%),
+    linear-gradient(135deg, #0b1220 0%, #0d1424 100%);
+  --panel: rgba(15, 23, 42, 0.92);
+  --panel-alt: #111827;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --link: #8da2c0;
+  --accent: #{vars.$accent-1};
+  --accent-2: #{vars.$accent-2};
+  --board-1: #e9c37a;
+  --board-2: #c8963a;
+  --board-border: #b8863b;
+  --grid-line: rgba(0, 0, 0, 0.22);
+}
+
+[data-theme='light'] {
+  --bg: #f8fafc;
+  --bg-alt: #eef2ff;
+  --bg-gradient: radial-gradient(circle at 18% 18%, #e0f2fe 0, rgba(224, 242, 254, 0) 40%),
+    radial-gradient(circle at 80% 12%, #ffe4c7 0, rgba(255, 228, 199, 0) 40%),
+    linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%);
+  --panel: #ffffff;
+  --panel-alt: #f8fafc;
+  --border: #d7dee8;
+  --text: #0f172a;
+  --muted: #475569;
+  --link: #334155;
+  --board-1: #f3d9a0;
+  --board-2: #e5b974;
+  --board-border: #d69b56;
+  --grid-line: rgba(0, 0, 0, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: var(--bg-gradient);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+a {
+  color: var(--link);
+}
+
+#root {
+  min-height: 100vh;
+  padding: 28px;
+}
+
+@media (max-width: 680px) {
+  #root {
+    padding: 18px;
+  }
+}

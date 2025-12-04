@@ -1,0 +1,81 @@
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.toggle-track {
+  position: relative;
+  width: 64px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--bg-alt), var(--panel));
+  border: 1px solid var(--border);
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.toggle-thumb.dark {
+  background: radial-gradient(circle at 30% 30%, #4b5563, #0b0f16 70%);
+  transform: translateX(32px);
+}
+
+.toggle-thumb.light {
+  background: radial-gradient(circle at 30% 30%, #ffffff, #cbd5e1 70%);
+  border: 1px solid #d9e0eb;
+}
+
+.toggle-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+.toggle-icon.sun {
+  background: #fbbf24;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 5.5a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v2.5a1 1 0 0 1-1 1Zm0 16.5a1 1 0 0 1-1-1V18a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1Zm11-7.5a1 1 0 0 1-1 1h-2.5a1 1 0 1 1 0-2H22a1 1 0 0 1 1 1ZM5.5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h2.5a1 1 0 0 1 1 1Zm13.243-6.743a1 1 0 0 1 0 1.414l-1.768 1.768a1 1 0 1 1-1.414-1.414l1.768-1.768a1 1 0 0 1 1.414 0ZM7.439 17.56a1 1 0 0 1 0 1.415l-1.768 1.767A1 1 0 0 1 4.257 19.9l1.768-1.768a1 1 0 0 1 1.414 0Zm12.122 3.182 0 0ZM16.475 12a4.475 4.475 0 1 1-8.95 0 4.475 4.475 0 0 1 8.95 0Z"/></svg>')
+    center / contain no-repeat;
+}
+
+.toggle-icon.moon {
+  background: #c7d2fe;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M20.742 14.045a8.002 8.002 0 0 1-10.787-10.79A9 9 0 1 0 20.742 14.045Z"/></svg>')
+    center / contain no-repeat;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

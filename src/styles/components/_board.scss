@@ -1,0 +1,127 @@
+@use '../abstracts/mixins' as mix;
+
+.board-shell {
+  @include mix.board-surface;
+  padding: 12px;
+  position: relative;
+}
+
+.board-area {
+  position: relative;
+}
+
+.board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  --board-size: 15;
+  background-color: transparent;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: calc(100% / var(--board-size)) calc(100% / var(--board-size));
+  background-position: top left;
+}
+
+.board::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--grid-line);
+  pointer-events: none;
+}
+
+.board-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}
+
+.overlay-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cell {
+  border: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell.available:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .cell.available:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.cell.winning {
+  background: rgba(245, 158, 11, 0.16);
+}
+
+.ghost {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px dashed;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.cell.available:hover .ghost {
+  opacity: 0.7;
+}
+
+.ghost-black {
+  border-color: #111827;
+}
+
+.ghost-white {
+  border-color: #f8fafc;
+}
+
+.stone {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.32);
+}
+
+.stone.black {
+  background: radial-gradient(circle at 30% 30%, #4b5563, #0b0f16 70%);
+}
+
+.stone.white {
+  background: radial-gradient(circle at 30% 30%, #f8fafc, #cbd5e1 70%);
+  border: 1px solid #e2e8f0;
+}
+
+.stone.last {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.stone.glow {
+  box-shadow:
+    0 0 0 4px rgba(245, 158, 11, 0.33),
+    0 16px 32px rgba(0, 0, 0, 0.45);
+}

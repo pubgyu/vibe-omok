@@ -1,0 +1,62 @@
+.api-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.api-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+
+.api-indicator.ok .api-dot {
+  background: #22c55e;
+}
+
+.api-indicator.error .api-dot {
+  background: #ef4444;
+}
+
+.api-indicator.checking .api-dot {
+  background: #f59e0b;
+}
+
+.ai-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+  border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+
+.ai-loader__label {
+  color: var(--muted);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

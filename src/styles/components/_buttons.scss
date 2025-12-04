@@ -1,0 +1,48 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as vars;
+
+button {
+  @include mix.button-base;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.primary {
+  color: #0b0f16;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: vars.$shadow-soft;
+  border: 1px solid var(--accent);
+  @include mix.hover-raise;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  @include mix.hover-raise;
+}
+
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0b0f16;
+  font-weight: 700;
+  padding: 10px 14px;
+  box-shadow: 0 10px 26px rgba(249, 115, 22, 0.35);
+}
+
+.logout-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-color: #0b0f16;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M13 3a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V6H7v12h5v-2a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7Zm3.293 4.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 .083 1.32l-.083.094-3 3a1 1 0 0 1-1.497-1.32l.083-.094L17.586 13H11a1 1 0 0 1-.117-1.993L11 11h6.586l-1.293-1.293a1 1 0 0 1-.083-1.32l.083-.094Z"/></svg>')
+    center / contain no-repeat;
+}
