@@ -2,7 +2,7 @@
 
 .panel {
   @include mix.card();
-  padding: 16px;
+  padding: 14px;
 }
 
 .panel-header {
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 9px 10px;
+  padding: 8px 10px;
   background: var(--panel-alt);
   border: 1px solid var(--border);
   border-radius: 10px;

@@ -15,7 +15,7 @@
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 20px;
+  padding: 18px;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.4);
 }
 
@@ -76,7 +76,7 @@
 
 @media (max-width: 520px) {
   .setup-card {
-    padding: 16px;
+    padding: 12px;
   }
 
   .setup-actions {

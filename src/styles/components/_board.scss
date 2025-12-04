@@ -2,17 +2,21 @@
 
 .board-shell {
   @include mix.board-surface;
-  padding: 12px;
+  padding: 10px;
   position: relative;
 }
 
 .board-area {
   position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .board {
   position: relative;
   width: 100%;
+  max-width: 560px;
   aspect-ratio: 1 / 1;
   display: grid;
   --board-size: 15;
@@ -53,6 +57,28 @@
   border: 1px solid var(--border);
   color: var(--text);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .board-shell {
+    padding: 8px;
+  }
+
+  .board-area,
+  .board {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .board-shell {
+    padding: 6px;
+  }
+
+  .board-area,
+  .board {
+    max-width: 90vw;
+  }
 }
 
 .cell {
