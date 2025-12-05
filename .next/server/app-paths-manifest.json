@@ -1,7 +1,0 @@
-{
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/omok-ai/route": "app/api/omok-ai/route.js",
-  "/api/omok-ai/health/route": "app/api/omok-ai/health/route.js",
-  "/game/page": "app/game/page.js"
-}
