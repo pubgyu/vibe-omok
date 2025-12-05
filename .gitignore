@@ -13,6 +13,8 @@ dist-ssr
 *.local
 /.next/
 /.next-cache/
+.tsconfig.tsbuildinfo
+.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
